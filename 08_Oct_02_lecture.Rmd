@@ -141,14 +141,15 @@ $$
     $$
     F = \left(\frac{n-K}{K-1}\right) \left(\frac{R^2}{1-R^2}\right) \sim F(K-1, n-K) .
     $$
-
+    
     where $F$ is $F$-distributed with $K-1$ and $n-K$ degrees of freedom.
     
     We reject $\text{H}_0$ if $F>F_{\alpha}(K-1,n-K)$. 
     
     - $F_{\alpha}(K-1,n-K)$ is the $(1-\alpha)$ percentile in the $F(K-1, n-K)$ distribution, corresponding to the level of significance, $\alpha$.
-    
-    
+
+
+​    
     <img src="https://drive.google.com/thumbnail?id=1LSF9a8en1SvwZDL76SHeZ0BpDYhHbLz-&sz=w1000" alt="F distribution" style="display: block; margin-right: auto; margin-left: auto; zoom:80%;" />
     
     The $p$-value is found by:
@@ -194,7 +195,7 @@ where $T$ is $t$-distribution with $n-K$ degrees of freedom.
 The $(1-\alpha)$ confidence interval for $\beta_j$: 
 $$
 [\hat{\beta}_j-c_{\alpha/2} \cdot se_{\hat{\beta}_j}, \hat{\beta}_j+c_{\alpha/2} \cdot se_{\hat{\beta}_j}] .
-$$ 
+$$
 
 **Note that** the t-distribution approximates to a standard normal distribution when the degrees of freedom are high. 
 In practice, people often use the critical values of the standard normal distribution for simplification. 
@@ -270,7 +271,7 @@ Note that only three of the four quarterly dummy variables are included in the m
 ___
 
 ## Bone density example
- 
+
 We considered a study of bone mineral density (in g/cm$^2$) for rats given isoflavone and for rats in a control group. We want to test if isoflavone have an effect on bone mineral density.
 
 
@@ -716,13 +717,12 @@ The two-way ANOVA test is used to compare the fits of two regression models.
 
 3. Interpret the results: If the $p$-value from the ANOVA test is low (typically <0.05), it suggests that the more complex model provides a significantly better fit to the data.
 
-
 **Mathematical formulations**
 
 For instance, consider we have two models:
 
 - Model 1: $y=\beta_1 + \beta_2 x_{2} + \varepsilon$, and
-- Model 2: $y=\beta_1 + \beta_2 x_{2} + \beta_3 x_3 + \beta_3 x_4 + \varepsilon$.
+- Model 2: $y=\beta_1 + \beta_2 x_{2} + \beta_3 x_3 + \beta_4 x_4 + \varepsilon$.
 
 We can form a test by comparing the $R^2$ from the two models.
 

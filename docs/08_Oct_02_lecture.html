@@ -427,18 +427,19 @@ This is sometimes referred to as the <span style="color:#008B45FF">F-test</span>
 <p>We reject <span class="math inline">\(\text{H}_0\)</span> if <span class="math inline">\(F&gt;F_{\alpha}(K-1,n-K)\)</span>.</p>
 <ul>
 <li><span class="math inline">\(F_{\alpha}(K-1,n-K)\)</span> is the <span class="math inline">\((1-\alpha)\)</span> percentile in the <span class="math inline">\(F(K-1, n-K)\)</span> distribution, corresponding to the level of significance, <span class="math inline">\(\alpha\)</span>.</li>
-</ul>
-<p><img src="https://drive.google.com/thumbnail?id=1LSF9a8en1SvwZDL76SHeZ0BpDYhHbLz-&sz=w1000" alt="F distribution" style="display: block; margin-right: auto; margin-left: auto; zoom:80%;" /></p>
-<p>The <span class="math inline">\(p\)</span>-value is found by:
-<span class="math display">\[
-  \text{P-value} = \mathbb{P}(F&gt;F_{\text{obs}}) ,
-  \]</span>
-where <span class="math inline">\(F_{\text{obs}}\)</span> is your calcualted/observed test statistic based on your data sample.</p>
-<ul>
-<li><p>Large values of <span class="math inline">\(F\)</span> give evidence against the validity of the null hypothesis. Note that a large <span class="math inline">\(F\)</span> is induced by a large value of <span class="math inline">\(R^2\)</span>.</p></li>
-<li><p>The logic of the test is that the <span class="math inline">\(F\)</span> statistic is a measure of the loss of fit (namely, all of <span class="math inline">\(R^2\)</span>) that results when we impose the restriction that all the slopes are zero. If <span class="math inline">\(F\)</span> is large, then the hypothesis is rejected.</p></li>
 </ul></li>
 </ul>
+<p>​<br />
+<img src="https://drive.google.com/thumbnail?id=1LSF9a8en1SvwZDL76SHeZ0BpDYhHbLz-&sz=w1000" alt="F distribution" style="display: block; margin-right: auto; margin-left: auto; zoom:80%;" /></p>
+<pre><code>The $p$-value is found by:
+$$
+\text{P-value} = \mathbb{P}(F&gt;F_{\text{obs}}) ,
+$$
+where $F_{\text{obs}}$ is your calcualted/observed test statistic based on your data sample.
+
+- Large values of $F$ give evidence against the validity of the null hypothesis. Note that a large $F$ is induced by a large value of $R^2$.
+
+- The logic of the test is that the $F$ statistic is a measure of the loss of fit (namely, all of $R^2$) that results when we impose the restriction that all the slopes are zero. If $F$ is large, then the hypothesis is rejected.</code></pre>
 <hr />
 </div>
 </div>
@@ -932,7 +933,7 @@ Scenario
 <span class="math inline">\(x_2\)</span>
 </th>
 <th style="text-align:left;">
-<span class="math inline">\(E[y|x_1,x_2]\)</span>
+<span class="math inline">\(E[y&amp;amp;#124;x_1,x_2]\)</span>
 </th>
 </tr>
 </thead>
@@ -1401,7 +1402,7 @@ ggplot(cps_data %&gt;% filter(married==0), aes(x = lwage, y = female, group = fe
 <p>For instance, consider we have two models:</p>
 <ul>
 <li>Model 1: <span class="math inline">\(y=\beta_1 + \beta_2 x_{2} + \varepsilon\)</span>, and</li>
-<li>Model 2: <span class="math inline">\(y=\beta_1 + \beta_2 x_{2} + \beta_3 x_3 + \beta_3 x_4 + \varepsilon\)</span>.</li>
+<li>Model 2: <span class="math inline">\(y=\beta_1 + \beta_2 x_{2} + \beta_3 x_3 + \beta_4 x_4 + \varepsilon\)</span>.</li>
 </ul>
 <p>We can form a test by comparing the <span class="math inline">\(R^2\)</span> from the two models.</p>
 <p><span class="math display">\[

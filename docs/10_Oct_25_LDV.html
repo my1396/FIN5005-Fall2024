@@ -429,7 +429,7 @@ In fact, <span class="math inline">\(5.93\%\)</span> of the non-smokers develope
             as.data.frame.matrix() </code></pre>
 <table class="table table-striped table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:risk-table">Table 1: </span>Risk of developing CHD for non-smokers and smokers.
+<span id="tab:risk-table">Table 1: </span><span id="tab:risk-table">Table 2: </span>Risk of developing CHD for non-smokers and smokers.
 </caption>
 <thead>
 <tr>
@@ -642,10 +642,10 @@ summary(fit.smoke)</code></pre>
 ## AIC: 1762.4
 ## 
 ## Number of Fisher Scoring iterations: 5</code></pre>
-<p>The regression result can be summarized in Table <a href="#tab:fit-smoke">2</a>.</p>
+<p>The regression result can be summarized in Table <a href="#tab:fit-smoke">3</a>.</p>
 <table style="text-align:center">
 <caption>
-<strong><span id="tab:fit-smoke"><span id="tab:fit-smoke">Table 2: </span></span>Logistic regression of CHD on smoke.</strong>
+<strong><span id="tab:fit-smoke"><span id="tab:fit-smoke">Table 3: </span></span>Logistic regression of CHD on smoke.</strong>
 </caption>
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
@@ -806,10 +806,10 @@ summary(fit.age)</code></pre>
 ## AIC: 1742.4
 ## 
 ## Number of Fisher Scoring iterations: 5</code></pre>
-<p>The regression result can be summarized in Table <a href="#tab:fit-age">3</a>.</p>
+<p>The regression result can be summarized in Table <a href="#tab:fit-age">4</a>.</p>
 <table style="text-align:center">
 <caption>
-<strong><span id="tab:fit-age"><span id="tab:fit-age">Table 3: </span></span>Logistic regression of CHD on age.</strong>
+<strong><span id="tab:fit-age"><span id="tab:fit-age">Table 4: </span></span>Logistic regression of CHD on age.</strong>
 </caption>
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
@@ -936,14 +936,14 @@ Akaike Inf. Crit.
     upper &lt;- expcoef * exp(1.96*regtab[,2]) 
     return (cbind(expcoef,lower, upper))
 } </code></pre>
-<p>Table <a href="#tab:OR-age">4</a> shows the odds ratio for age and its <span class="math inline">\(95\%\)</span> confidence interval.</p>
+<p>Table <a href="#tab:OR-age">5</a> shows the odds ratio for age and its <span class="math inline">\(95\%\)</span> confidence interval.</p>
 <pre class="r"><code>expcoef(fit.age)[-1,,drop=FALSE] %&gt;% 
     kable(digits = 4, escape= TRUE, 
           caption = &quot;Exponential of the coefficient and 95% CI.&quot;) %&gt;% 
     kable_styling(full_width = FALSE)</code></pre>
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:OR-age">Table 4: </span>Exponential of the coefficient and 95% CI.
+<span id="tab:OR-age">Table 5: </span><span id="tab:OR-age">Table 6: </span>Exponential of the coefficient and 95% CI.
 </caption>
 <thead>
 <tr>
@@ -995,7 +995,7 @@ The odds given <span class="math inline">\(\boldsymbol{x}=[1, x_2, \ldots, x_K]^
 <pre class="r"><code>wcgs.mult &lt;- glm(chd69~age+chol+sbp+bmi+smoke, data=wcgs, family=binomial, subset=(chol&lt;600))</code></pre>
 <table style="text-align:center">
 <caption>
-<strong><span id="tab:fit-mult"><span id="tab:fit-mult">Table 5: </span></span>Logistic regression of CHD on multiple covariates.</strong>
+<strong><span id="tab:fit-mult"><span id="tab:fit-mult">Table 7: </span></span>Logistic regression of CHD on multiple covariates.</strong>
 </caption>
 <tr>
 <td colspan="2" style="border-bottom: 1px solid black">
@@ -1197,10 +1197,10 @@ Akaike Inf. Crit.
 \exp(0.635) = 1.89
 \]</span>
 measures the proportionate increase in the odds of developing CHD for smokers compared to nonsmokers <em>adjusted for age, cholesterol, SBP, and BMI</em>.</p>
-Table <a href="#tab:log-mult">6</a> shows ddds ratios corresponding to all covariates and their confidence intervals.
+Table <a href="#tab:log-mult">8</a> shows ddds ratios corresponding to all covariates and their confidence intervals.
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
-<span id="tab:log-mult">Table 6: </span>Odds ratios with confidence intervals.
+<span id="tab:log-mult">Table 8: </span><span id="tab:log-mult">Table 9: </span>Odds ratios with confidence intervals.
 </caption>
 <thead>
 <tr>
@@ -1388,7 +1388,7 @@ In particular, <span class="math inline">\(e^{\beta_1}\)</span> is the <span sty
 \frac{\text{odds}(x=1)}{\text{odds}(x=0)} = \exp (\beta_1).
 \]</span></p>
 <p>In other words, the exponential of the regression coefficient <span class="math inline">\((e^{\beta_1})\)</span> is the odds ratio for the odds given the treatment (smokers) to the odds in absence of the treatment (non-smokers).</p>
-<p>In our case, the odds ratio for CHD for a smoker compared to a non-smoker based on the logistic regression in Table <a href="#tab:fit-smoke">2</a> is
+<p>In our case, the odds ratio for CHD for a smoker compared to a non-smoker based on the logistic regression in Table <a href="#tab:fit-smoke">3</a> is
 <span class="math display">\[
 \frac{\text{odds}(smoke=1)}{\text{odds}(smoke=0)} = \exp (0.63) = 1.88 \,.
 \]</span></p>
@@ -1419,7 +1419,7 @@ We obtain the <span class="math inline">\(95\%\)</span> confidence interval for 
 <span class="math display">\[
 [\exp(\widehat{L}),\, \exp(\widehat{U})] \,.
 \]</span></p>
-<p>Using the regression result in Table <a href="#tab:fit-age">3</a>, we have <span class="math inline">\(\hat{\beta}_1= 0.0744\)</span> and <span class="math inline">\(se(\hat{\beta}_1)=0.0113\)</span>. Hence, the <span class="math inline">\(95\%\)</span> CI for <span class="math inline">\(\beta_1\)</span>:
+<p>Using the regression result in Table <a href="#tab:fit-age">4</a>, we have <span class="math inline">\(\hat{\beta}_1= 0.0744\)</span> and <span class="math inline">\(se(\hat{\beta}_1)=0.0113\)</span>. Hence, the <span class="math inline">\(95\%\)</span> CI for <span class="math inline">\(\beta_1\)</span>:
 <span class="math display">\[
 [0.0744-1.96\times 0.0113, \, 0.0744+1.96\times 0.0113] = [0.0523, \, 0.0965] \,.
 \]</span>
